@@ -5,5 +5,12 @@ staticfiles
 
 .idea/*
 media
-*/migrations
-static/fonts
+blog/migrations/*
+configuration/migrations/*
+portfolio/migrations/*
+services/migrations/*
+static/css/*
+static/fonts/*
+static/images/*
+static/js/*
+db.website_1_0

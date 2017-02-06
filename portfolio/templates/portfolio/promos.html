@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-6 wow slideInLeft" data-wow-offset="10">
+            <h2>{{ promo.project.name }}</h2>
+            <h3 class="caption gray">{{ promo.subtitle }}</h3>
+            <p>
+                {{ promo.project.page.page_content|truncatewords:25 }}
+            </p>
+
+            <a href="#" class="btn btn-default btn-lg">{{ promo.status }}</a>
+            <a href="#" class="btn btn-outlined btn-lg">Contact us</a>
+        </div><!-- /.col-md-6 -->
+
+        <div class="col-md-6 wow slideInRight" data-wow-offset="10">
+            <img src="{{ promo.project.cover.url }}" class="img-responsive">
+        </div><!-- /.col-md-6 -->
+
+    </div><!-- /.row -->
+</div><!-- /.container -->

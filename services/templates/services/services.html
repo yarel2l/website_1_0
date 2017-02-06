@@ -1,0 +1,30 @@
+{% load staticfiles %}
+{% if  services %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h2>What we do</h2>
+            <h3 class="caption gray">Eleifend mi iaculis parturient etiam volutpat pulvinar eleifend</h3>
+        </div><!-- /.col-md-12 -->
+
+        <div class="container">
+            <div class="row text-center">
+                {% for service in services %}
+                    <div class="col-md-4">
+                        <div class="row services-item text-center wow flipInX" data-wow-offset="10">
+                            <a href="{% url 'services:show_info' service.slug %}">
+                                <img src="{{ service.picture.url }}" class="img-responsive" style="width: 120px; height: 120px;"/>
+                            </a>
+                            <h4>{{ service.name  }}</h4>
+                            <p>{{ service.resume_info|truncatewords:30 }}</p>
+                        </div><!-- /.row -->
+                    </div><!-- /.col-md-4 -->
+                {% endfor %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+{% endif %}

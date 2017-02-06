@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-12 segment">
+            <a href="{% url 'homepage' %}" title="Locomotion USA - Website">
+                <h2>
+                    <!-- replace with your brand logo/text -->
+                    <img src="{% static "images/LOCOMOTION-TEXT2b.png" %}" onerror="this.src='{% static "images/LOCOMOTION-TEXT2b.png" %}'; this.onerror=null;" alt="Locomotion USA - Website" title="Locomotion USA - Website" class="img-responsive" style="width: 240px; height: 80px;">
+                </h2>
+            </a>
+            <p class="white">{{ homepage.description }}</p>
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+
+
+    <div class="row text-center">
+        <div class="col-md-12 social segment">
+            <h4>Stay Connected</h4>
+            {% if homepage.get_networks %}
+                {% for social in homepage.get_networks %}
+                    {% if social.name == 'YT'  %}
+                        <a href="{{ social.url }}"><i class="fa fa-youtube fa-3x"></i></a>
+                    {% elif social.name == 'FB'  %}
+                        <a href="{{ social.url }}"><i class="fa fa-facebook fa-3x"></i></a>
+                    {% elif social.name == 'TW'  %}
+                        <a href="{{ social.url }}"><i class="fa fa-twitter fa-3x"></i></a>
+                    {% elif social.name == 'IN'  %}
+                        <a href="{{ social.url }}"><i class="fa fa-linkedin fa-3x"></i></a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+<div class="copynote">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                &copy; {{ current_year }}. Locomotion USA LLC. All rights reserved.
+            </div><!-- /.col-md-12 -->
+
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /.copynote -->
+
+<div class="nav pull-right scroll-top">
+    <a href="#home" title="Scroll to top"><i class="fa fa-angle-up"></i></a>
+</div>

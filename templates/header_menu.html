@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<nav class="navbar navbar-custom navbar-fixed-top {% block menu_nav_style %}{% endblock %}" role="navigation">
+    <div class="container">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand page-scroll" href="{% url 'homepage' %}">
+                <!-- replace with your brand logo/text -->
+                <span class="brand-logo"><img src="{% static "images/locomotion_6.png" %}" onerror="this.src='assets/images/locomotion_6.png'; this.onerror=null;" alt="Locomotion USA - Animation & Interactive" title="Locomotion USA - Animation & Interactive" class="img-responsive" width="160px" height="64px"></span>
+            </a>
+        </div>
+        <div class="main-nav pull-right">
+            <div class="button_container toggle">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="overlay" id="overlay">
+            <nav class="overlay-menu">
+                <ul>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#services">What we do</a></li>
+                    <li><a href="#products">Why choose us</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#clients">Our clients</a></li>
+                    <li><a href="#contact">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div><!-- /.container -->
+</nav>

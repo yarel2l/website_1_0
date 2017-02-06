@@ -1,0 +1,14 @@
+venv
+*.pyc
+staticfiles
+.env
+
+.idea/*
+media
+static
+static/fonts/*
+static/images/gallery/*
+static/images/services/*
+static/video/*
+contact
+team

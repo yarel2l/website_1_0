@@ -1,0 +1,41 @@
+<div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h2>Some of our recent work</h2>
+                            <h3 class="caption white">Designed with passion and coded to perfection, Hallooou is a stylish responsive HTML template, that is packed with tons of features yet is so easy to use. </h3>
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+
+                <div class="container project-container text-center">
+                    <div class="recent-project-carousel owl-carousel owl-theme popup-gallery">
+                    {% for project in projects %}
+                        <div class="item recent-project">
+                            <img src="{{ project.cover.url }}" alt="{{ project.cover.name }}" style="height: 250px; width: 100%;">
+                            <div class="project-info">
+                                <h3>{{ project.name }}</h3>
+                                <ul class="project-meta">
+                                    <li>
+                                        {% for service_tag in project.project_type.all %}
+                                            <a href="{% url 'services:show_info' service_tag.slug %}">{{ service_tag.name }}</a>
+                                            {% if not forloop.last %}
+                                                <i class="fa fa-angle-right"></i>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </li>
+                                </ul>
+                            </div><!-- /.project-info -->
+                            <div class="full-project">
+                                <a href="{% url 'portfolio:show_info' project.slug %}" title="{{ project.name }}">View project <i class="fa fa-chevron-right"></i></a>
+                            </div><!-- /.full-project -->
+                        </div><!-- /.item -->
+                    {% endfor %}
+
+                    </div><!-- /.recent-project-carousel -->
+
+                    <div class="customNavigation project-navigation text-center">
+                        <a class="btn-prev"><i class="fa fa-angle-left fa-2x"></i></a>
+                        <a class="btn-next"><i class="fa fa-angle-right fa-2x"></i></a>
+                    </div><!-- /.project-navigation -->
+
+                </div><!-- /.container -->

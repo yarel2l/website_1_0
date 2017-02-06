@@ -1,0 +1,149 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>{% block title %}{{ _('Locomotion USA')  }}{% endblock %} </title>
+
+    <link rel="icon" type="image/png" href="{% static "images/locomotion_6.png" %}" />
+
+    {# super_styles.html #}
+    {% include 'super_styles.html' %}
+</head>
+
+<body id="home">
+            <!-- Navigation -->
+                <nav class="navbar navbar-custom navbar-fixed-top {% block menu_nav_style %}{% endblock %}" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header pull-left">
+                            <a class="navbar-brand page-scroll" href="{% url 'homepage' %}">
+                                <!-- replace with your brand logo/text -->
+                                <span class="brand-logo"><img src="{% static "images/locomotion_6.png" %}" onerror="this.src='assets/images/locomotion_6.png'; this.onerror=null;" alt="Locomotion USA - Animation & Interactive" title="Locomotion USA - Animation & Interactive" class="img-responsive" width="160px" height="64px"></span>
+                            </a>
+                        </div>
+                        <div class="main-nav pull-right">
+                            <div class="button_container toggle">
+                                <span class="top"></span>
+                                <span class="middle"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <div class="overlay" id="overlay">
+                            <nav class="overlay-menu">
+                                <ul>
+                                    <li><a href="#about">About us</a></li>
+                                    <li><a href="#services">What we do</a></li>
+                                    <li><a href="#products">Why choose us</a></li>
+                                    <li><a href="#team">Our Team</a></li>
+                                    <li><a href="#portfolio">Portfolio</a></li>
+                                    <li><a href="#clients">Our clients</a></li>
+                                    <li><a href="#contact">Contact us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div><!-- /.container -->
+                </nav>
+
+            {% block header %}
+                {% include 'intro.html' %}
+            {% endblock %}
+
+        {% block content %}
+            <!-- About Section -->
+            {% comment %}<section id="about" class="about content-section alt-bg-light wow fadeInUp" data-wow-offset="10">
+                {# about.html #}
+            </section>{% endcomment %}
+            <!-- /.section -->
+
+            <!-- Services Section -->
+            <section id="services" class="services content-section">
+                {# services.html #}
+                {% include 'services/services.html' %}
+            </section>
+            <!-- /.section -->
+
+
+            <!-- Portfolio/Gallery Section -->
+            <section id="portfolio" class="portfolio content-section parallax">
+                {# portfolio.html #}
+                {% include 'portfolio/portfolio.html' %}
+            </section>
+            <!-- /.portfolio -->
+
+
+            <!-- Call to action - one section -->
+            <section class="cta-one-section content-section alt-bg-light">
+                {# promos.html #}
+                {% include 'portfolio/promos.html' %}
+            </section>
+            <!-- /.cta-one-section -->
+
+
+            <!-- Call to action - two section -->
+            {% comment %}<section class="cta-two-section">
+            {#  hire_us.html #}
+            {% include 'contact/hire_us.html' %}
+            </section>{% endcomment %}
+            <!-- /.cta-two-section -->
+
+
+			<!-- Our team Section -->
+            {% comment %}<section id="team" class="team content-section">
+                {# team.html #}
+
+            </section>{% endcomment %}
+            <!-- /.our-team -->
+
+			<!-- Counter Section -->
+           {% comment %} <section id="counter" class="counter-section content-section parallax">
+                {# counter.html #}
+            </section>{% endcomment %}
+            <!-- /.counter-section -->
+        {% endblock %}
+            <!-- Contact section -->
+            <section id="contact" class="contact content-section no-bottom-pad wow fadeIn" data-wow-offset="10">
+                {% comment %}<div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h2>Contact</h2>
+                            <h3 class="caption gray">Feel free to get in touch with us if you have a new project or simply something awesome</h3>
+                        </div><!-- /.col-md-12 -->
+
+                    </div><!-- /.row -->
+                </div>{% endcomment %}
+                <!-- /.container -->
+
+                {# contact.html #}
+{#                {% include 'contact/contact.html' %}#}
+
+                {# map.html #}
+
+
+            <!-- Footer -->
+                <footer>
+                {# footer #}
+                {% include 'footer.html' %}
+
+                </footer>
+                <!-- /.footer -->
+
+
+
+    {# super_scripts.html #}
+    {% include 'super_scripts.html' %}
+
+    <!-- Custom JavaScript -->
+    {% block custom_scripts %}
+        <script src="{% static "js/hallooou.js" %}"></script>
+    {% endblock %}
+
+
+</body>
+
+</html>

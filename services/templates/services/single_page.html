@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ page.name }} - {{ block.super }}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block menu_nav_style %}{{ 'top-nav-collapse' }}{% endblock %}
+
+{% block content %}
+    <!-- About Section -->
+            <section id="about" class="about content-section alt-bg-light wow fadeInUp" data-wow-offset="10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>{{ page.page.title }}</h2>
+                            <h3 class="caption gray">Customers in 100+ countries use our services</h3>
+                            <p class="text-justify">{{ page.page.page_content|safe }}</p>
+                        </div><!-- /.col-md-6 -->
+
+                        <div class="col-md-6">
+                        <h3>{{ _('What else?') }}</h3>
+                            <ul class="list-group">
+                                {% for service in services %}
+                                <li class="list-group-item services-item text-center wow flipInX" data-wow-offset="10">
+                                    <img src="{{  service.picture  }}" class="img-responsive pull-left" style="width: 32px; height: 32px;"/>
+                                    <a href="{% url 'services:show_info' service.slug %}" class="btn btn-link" style="color: #3F3F3F; text-decoration: none;">{{ service.name|upper }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.section -->
+
+{% endblock %}
+{% block custom_scripts %}
+    <script src="{% static "js/hallooou.page.js" %}"></script>
+{% endblock %}

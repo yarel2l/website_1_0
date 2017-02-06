@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ page.name  }} - {{ block.super }}{% endblock %}
+{% block header %}{% endblock %}
+{% block menu_nav_style %}{{ 'top-nav-collapse' }}{% endblock %}
+{% block content %}
+    <!-- About Section -->
+            <section id="about" class="about content-section alt-bg-light wow fadeInUp" data-wow-offset="10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>{{ page.page.title }}</h2>
+                            <h3 class="caption gray">Customers in 100+ countries use our services</h3>
+                            <p class="text-justify">{{ page.page.page_content|safe }}</p>
+                        </div><!-- /.col-md-6 -->
+
+                        <div class="col-md-6">
+                            <!-- Display image -->
+                            {% comment %} <img src="{{ page.cover.url }}" class="img-responsive">{% endcomment %}
+                            <h3>{{ _('Related projects') }}</h3>
+                            {% if related_projects %}
+                            <ul class="list-group">
+                                {% for project in related_projects %}
+                                <li class="list-group-item text-center wow flipInX" data-wow-offset="10">
+                                    <a href="{% url 'portfolio:show_info' project.slug %}" class="btn btn-link" style="color: #3F3F3F; text-decoration: none;">{{ project.name|upper }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                                <blockquote>
+                                    <p>{{ _("Upss... We haven't related projects yet!") }}</p>
+                                    <h1>{{ _('Have an idea?') }}</h1>
+                                </blockquote>
+                            {% endif %}
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.section -->
+
+{% endblock %}
+{% block custom_scripts %}
+    <script src="{% static "js/hallooou.page.js" %}"></script>
+{% endblock %}

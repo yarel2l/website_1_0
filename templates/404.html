@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block  title %}
+    {{ _("404") }} - {{ block.super }}
+{% endblock %}
+{% block content %}
+    <blockquote>
+        <h1>
+            {{ _("Upss... Your Website haven't configuration for load in homepage")  }}
+        </h1>
+    </blockquote>
+{% endblock %}

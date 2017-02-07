@@ -11,7 +11,7 @@
                         <div class="col-md-6">
                             <h2>{{ page.page.title }}</h2>
                             <p>
-                                <small class="gray">Category: {{ page.page.category.get.name }} </small>
+                                <small class="gray">Category: <a href="" class="badge label-danger"> {{ page.page.category.get.name }}</a>  </small>
                             </p>
 
                             <p class="text-justify">{{ page.page.page_content|safe }}</p>

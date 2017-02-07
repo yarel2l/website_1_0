@@ -50,9 +50,9 @@
                     </div><!-- /.container -->
                 </nav>
 
-            {% block header %}
-                {% include 'intro.html' %}
-            {% endblock %}
+        {% block header %}
+            {% include 'intro.html' %}
+        {% endblock %}
 
         {% block content %}
             <!-- About Section -->
@@ -62,26 +62,32 @@
             <!-- /.section -->
 
             <!-- Services Section -->
+            {% if services %}
             <section id="services" class="services content-section">
                 {# services.html #}
                 {% include 'services/services.html' %}
             </section>
+            {% endif %}
             <!-- /.section -->
 
 
             <!-- Portfolio/Gallery Section -->
+            {% if projects %}
             <section id="portfolio" class="portfolio content-section parallax">
                 {# portfolio.html #}
                 {% include 'portfolio/portfolio.html' %}
             </section>
+            {% endif %}
             <!-- /.portfolio -->
 
 
             <!-- Call to action - one section -->
+            {% if promo %}
             <section class="cta-one-section content-section alt-bg-light">
                 {# promos.html #}
                 {% include 'portfolio/promos.html' %}
             </section>
+            {% endif %}
             <!-- /.cta-one-section -->
 
 
@@ -132,7 +138,6 @@
 
                 </footer>
                 <!-- /.footer -->
-
 
 
     {# super_scripts.html #}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ _('Projects')  }} - {{ block.super }}{% endblock %}
+{% block header %}{% endblock %}
+{% block menu_nav_style %}{{ 'top-nav-collapse' }}{% endblock %}
+{% block content %}
+    <!-- About Section -->
+            <section id="about" class="about content-section alt-bg-light wow fadeInUp" data-wow-offset="10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            {% for project in projects %}
+                                <div class="row">
+                                    <div class="thumbnail">
+                                      <img src="{{ project.cover.url }}" alt="{{ project.cover.name }}" style="height: 250px; width: 100%;" class="img-rounded">
+                                      <div class="caption">
+                                        <h3>{{ project.name }}</h3>
+                                        <p>{{ project.page.page_content|safe }}</p>
+
+                                            <p>
+                                                <div class="toolbar text-center align-middle" role="toolbar" aria-label="social">
+                                                  <div class="btn-group" role="group" aria-label="yt">
+                                                      <a href="#" class="btn btn-toolbar btn-danger"><i class="fa fa-youtube"></i></a>
+                                                  </div>
+                                                  <div class="btn-group" role="group" aria-label="fb">
+                                                    <a href="#" class="btn btn-toolbar btn-primary"><i class="fa fa-facebook"></i> </a>
+                                                  </div>
+                                                  <div class="btn-group" role="group" aria-label="tw">
+                                                      <a href="#" class="btn btn-toolbar btn-info"><i class="fa fa-twitter"></i></a>
+                                                  </div>
+                                                  <div class="btn-group" role="group" aria-label="go">
+                                                      <a href="#" class="btn btn-toolbar btn-danger"><i class="fa fa-google-plus"></i></a>
+                                                  </div>
+                                                </div>
+                                            </p>
+
+                                      </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+
+
+                            <div class="row text-center">
+                                <nav aria-label="Page navigation">
+                                  <ul class="pagination">
+                                      {% if projects.has_previous %}
+                                        <li class="pull-left">
+                                          <a href="?page={{ projects.previous_page_number }}" aria-label="Previous">
+                                            <span aria-hidden="true"><i class="fa fa-chevron-circle-left"></i>&nbsp;previous</span>
+                                          </a>
+                                        </li>
+                                      {% endif %}
+                                         <li class="btn-group btn-group-sm">
+                                          <span>Page <span class="badge"> {{ projects.number }}</span> of {{ projects.paginator.num_pages }} <span class="sr-only">(current)</span></span>
+                                         </li>
+                                    {% if projects.has_next %}
+                                        <li class="pull-right">
+                                          <a href="?page={{ projects.next_page_number }}" aria-label="Next">
+                                            <span aria-hidden="true">next&nbsp;<i class="fa fa-chevron-circle-right"></i></span>
+                                          </a>
+                                        </li>
+                                    {% endif %}
+                                  </ul>
+                                </nav>
+                            </div>
+
+
+                        </div><!-- /.col-md-6 -->
+
+                        <div class="col-md-3"></div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.section -->
+
+{% endblock %}
+{% block custom_scripts %}
+    <script src="{% static "js/hallooou.page.js" %}"></script>
+{% endblock %}

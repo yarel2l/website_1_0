@@ -17,7 +17,7 @@
                                 <ul class="project-meta">
                                     <li>
                                         {% for service_tag in project.project_type.all %}
-                                            <a href="{% url 'services:show_info' service_tag.slug %}">{{ service_tag.name }}</a>
+                                            <a href="{% url 'portfolio:list' service_tag.slug %}">{{ service_tag.name }}</a>
                                             {% if not forloop.last %}
                                                 <i class="fa fa-angle-right"></i>
                                             {% endif %}

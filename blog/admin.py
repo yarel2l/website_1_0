@@ -1,11 +1,10 @@
 from django.contrib import admin
 from .models import Page, Category
 
-
 class PageAdmin(admin.ModelAdmin):
-	list_display = ('name', 'picture', 'page', 'is_public')
-	list_editable = ('picture', 'page', 'is_public')
-	list_filter = ['name', 'is_public']
+	list_display = ('title', 'date_created', 'is_menu', )
+	list_editable = ('title', 'is_menu', )
+	list_filter = ['title', 'date_created']
 	list_per_page = 5
 	fieldsets = (
 		('Basic Information', {
@@ -19,6 +18,6 @@ class PageAdmin(admin.ModelAdmin):
 	)
 
 
-
-admin.site.register(Page)
+admin.site.register(Page, PageAdmin)
 admin.site.register(Category)
+

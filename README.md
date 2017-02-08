@@ -1,4 +1,5 @@
 # Locomotion USA website Ver-1.0
+An fantastic project starter template for Django 1.9.
 
 ##INFO:
     THIS PROJECT HELP ME TO LEARN ABOUT DJANGO.
@@ -6,8 +7,6 @@
 
 ## IMPORTANT TO ME!!
 All changes in apps, please write inside readme file in their respective section.
-
-An utterly fantastic project starter template for Django 1.9.
 
 ## App list:
 
@@ -18,13 +17,13 @@ Include simple models as Page and Category
         Put it here. Use format: [# info about it]
 
 ### Configuration
-Set initial settings for homepage.
-- Header Video
-- Sections (Header menu navigation, Services, Portfolio, Promotional, Team, Contacts, Map, Footer)
+Set initial settings for homepage:
+    - Header Video
+    - Sections (Header menu navigation, Services, Portfolio, Promotional, Team, Contacts, Map, Footer)
 
-Models:
-1. Website
-2. SocialNetworks
+####  Models:
+        1. Website
+        2. SocialNetworks
 
 - Changes:
         Put it here. Use format: [# info about it]
@@ -32,9 +31,9 @@ Models:
 ### Portfolio
 Include a list of projects.
 
-Models:
-1. Project
-2. Promo
+####  Models:
+        1. Project
+        2. Promo
 
 - Changes:
         Put it here. Use format: [# info about it]
@@ -42,8 +41,8 @@ Models:
 ### Services
 Include a  basic info about company services
 
-Models:
-1. Service
+####  Models:
+        1. Service
 
 - Changes:
         Put it here. Use format: [# info about it]
@@ -51,9 +50,9 @@ Models:
 ### Team
 Show simple stuff list in homepage. Team member could be join to one Team
 
-Models:
-1. Team
-2. Profile
+####  Models:
+        1. Team
+        2. Profile
 
 - Note:
     Profile had a relation 121 with Django User only

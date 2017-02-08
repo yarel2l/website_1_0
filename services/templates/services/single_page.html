@@ -11,11 +11,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
+                            {% if page.page %}
                             <h2>{{ page.page.title }}</h2>
                             <p>
-                                <small class="gray">Category: <a href="" class="badge label-danger"> {{ page.page.category.get.name }}</a> </small>
+                                <small class="gray">Category: <a href="#" class="badge label-danger"> {{ page.page.category.get.name }}</a> </small>
                             </p>
                             <p class="text-justify">{{ page.page.page_content|safe }}</p>
+                            {% else %}
+                                <blockquote>
+                                    <p>{{ _("Upss... Sorry, we must write something here!") }}</p>
+                                    <h1>{{ _("Very soon we'll fix this") }}</h1>
+                                </blockquote>
+                            {% endif %}
                         </div><!-- /.col-md-6 -->
 
                         <div class="col-md-6">

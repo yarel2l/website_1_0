@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Promo
+from .models import Promo, Project
 
 
 class PromoInline(admin.StackedInline):
@@ -14,5 +14,5 @@ class ProjectAdmin(admin.ModelAdmin):
 	list_filter = ['project_type', 'name', ]
 	filter_horizontal = ['project_type', ]
 
-admin.site.register(Project, ProjectAdmin)
 
+admin.site.register(Project, ProjectAdmin)

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'services.apps.ServicesConfig',
     'portfolio.apps.PortfolioConfig',
-    #'contact.apps.ContactConfig'
+    'team.apps.TeamConfig'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -86,14 +86,13 @@ WSGI_APPLICATION = 'website_1_0.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(PROJECT_ROOT, 'daqp30p3n4c4mu'),
+        'ENGINE': 'django.db.backends.sqlite3',     # Engine must be changed to: django.db.backends.postgresql_psycopg2
         'NAME': os.path.join(BASE_DIR, 'db.website_1_0'),
         # The following settings are not used with sqlite3:
-        # 'USER': 'jcaazgwwwnqnyn',
-        # 'PASSWORD': '8262d72315a150678af4d51a4fe7547c9ef1c4b892a22810a6d7d1ed192033e8',
-        # 'HOST': 'ec2-54-225-242-74.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        # 'PORT': '5432',                      # Set to empty string for default.
+        # 'USER': ''
+        # 'PASSWORD': ''
+        # 'HOST': ''   # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        # 'PORT': ''   # Set to empty string for default.
     }
 }
 

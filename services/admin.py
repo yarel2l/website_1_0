@@ -2,6 +2,7 @@ from django.contrib import admin
 from blog.models import Page
 from .models import Service
 
+
 class PageInline(admin.StackedInline):
 	model = Page
 	extra = 1
